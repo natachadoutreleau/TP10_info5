@@ -149,10 +149,9 @@ int test_Mario_and_Yoshi_accelerate(){
 
 
 /**
- * Test if Yoshi Accelerate faster than mario
+ * Race between two mario's and a yoshi; the first that goes up to speed 10 win.
  *
  * @param none
- * @return 0 if the test is a success; 1 if not
  */
 void Let_the_Race_begin(){
   std::vector<Character*> racer;

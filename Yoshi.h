@@ -7,9 +7,13 @@
 class Yoshi : public Character
 {
   public :
+  Yoshi();
+  Yoshi(int crest);
   virtual std::string WhatAmI() const;
   void Accelerate();
 
+  private:
+    int *crest_;
 };
 
 #endif
