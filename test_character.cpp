@@ -176,4 +176,7 @@ void Let_the_Race_begin(){
       }
       }
     std::cout<<"The winner is "<<winner->WhatAmI()<<std::endl;
+    for(Character* n : racer){
+      delete n;
+      }
 }
