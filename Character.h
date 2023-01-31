@@ -9,7 +9,7 @@ public:
 
     void Accelerate();
     void Break();
-    inline float speed();
+    inline float speed() const;
 
     protected :
         float speed_;

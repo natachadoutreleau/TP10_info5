@@ -19,4 +19,20 @@ void Accelerate(){
   if (speed_<max_speed_){
     speed_++;
   }
+  else {
+    std::cout<< "You can't go faster!"<< std::endl;
+  }
+}
+
+/**
+ * Decrement the value speed if the speed is higher than 0
+ * @param none
+ */
+void Break(){
+  if (speed_>0){
+    speed_--;
+  }
+  else {
+    std::cout<< "Your car is stopped!"<< std::endl;
+  }
 }
