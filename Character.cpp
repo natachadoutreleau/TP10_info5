@@ -15,7 +15,7 @@ Character::Character(){
  * Increment the value speed if the speed is lower than the max_speed_
  * @param none
  */
-void Accelerate(){
+void Character::Accelerate(){
   if (speed_<max_speed_){
     speed_++;
   }
@@ -28,11 +28,19 @@ void Accelerate(){
  * Decrement the value speed if the speed is higher than 0
  * @param none
  */
-void Break(){
+void Character::Break(){
   if (speed_>0){
     speed_--;
   }
   else {
     std::cout<< "Your car is stopped!"<< std::endl;
   }
+}
+
+/**
+ * Inlined getter of speed
+ * @param none
+ */
+inline float Character::speed(){
+  return speed_;
 }
