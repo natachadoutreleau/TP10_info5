@@ -1,6 +1,8 @@
 #include<iostream>
 #include "test_character.h"
 #include "Character.h"
+#include "Mario.h"
+#include "Yoshi.h"
 
 
 /**
@@ -9,7 +11,7 @@
  * @return 0 if the test is a success; 1 if not
  */
 int test_ctor(){
-    Character c;
+    Mario c;
     if (c.speed()==0){
       std::cout<< "The speed is: "<< c.speed()<<std::endl;
       return 0;
@@ -23,7 +25,7 @@ int test_ctor(){
  * @return 0 if the test is a success; 1 if not
  */
 int test_accelerate(){
-  Character c;
+  Mario c;
   std::cout<< "The speed is: "<< c.speed()<<std::endl;
   c.Accelerate();
   if (c.speed()==1){
@@ -40,7 +42,7 @@ int test_accelerate(){
  */
 
 int test_accelerate_more_than_max_speed(){
-  Character c;
+  Mario c;
   int i =0;
   while(i<10){
     c.Accelerate();
@@ -61,7 +63,7 @@ int test_accelerate_more_than_max_speed(){
  * @return 0 if the test is a success; 1 if not
  */
 int test_break_lower_than_zero(){
-  Character c;
+  Mario c;
   std::cout<< "The speed is: "<< c.speed()<<std::endl;
   c.Break();
   if (c.speed()==0){
@@ -77,7 +79,7 @@ int test_break_lower_than_zero(){
  * @return 0 if the test is a success; 1 if not
  */
 int test_break(){
-  Character c;
+  Mario c;
   int i =0;
   while(i<10){
     c.Accelerate();
@@ -100,6 +102,6 @@ int test_break(){
  *@param none
  */
 void test_destructor(){
-  Character *c = new Character;
+  Mario *c = new Mario;
   delete c;
 }
