@@ -34,7 +34,34 @@ int test_accelerate_more_than_max_speed(){
   std::cout<< "The speed is: "<< c.speed()<<std::endl;
   c.Accelerate();
   if (c.speed()==10){
-    std::cout<< "The is speed still: "<< c.speed()<<std::endl;
+    std::cout<< "The speed is still: "<< c.speed()<<std::endl;
+    return 0;
+  }
+  return 1;
+}
+
+int test_break_lower_than_zero(){
+  Character c;
+  std::cout<< "The speed is: "<< c.speed()<<std::endl;
+  c.Break();
+  if (c.speed()==0){
+    std::cout<< "You can't go slower than staying still: "<< c.speed()<<std::endl;
+    return 0;
+  }
+  return 1;
+}
+
+int test_break(){
+  Character c;
+  int i =0;
+  while(i<10){
+    c.Accelerate();
+    i++;
+  }
+  std::cout<< "The speed is: "<< c.speed()<<std::endl;
+  c.Break();
+  if (c.speed()==9){
+    std::cout<< "The speed is: "<< c.speed()<<std::endl;
     return 0;
   }
   return 1;
