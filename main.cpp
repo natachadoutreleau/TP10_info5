@@ -15,6 +15,8 @@ int main(){
   std::cout<< "\nTest 5: "<<std::endl;
   i=test_break();
 
+  test_destructor();
+
 
 return 0;
 }
