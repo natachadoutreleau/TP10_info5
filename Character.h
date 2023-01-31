@@ -9,12 +9,19 @@ public:
 
     void Accelerate();
     void Break();
-    inline float speed() const;
+    float speed() const;
 
     protected :
         float speed_;
         float max_speed_;
 };
 
+/**
+ * Inlined getter of speed
+ * @param none
+ */
+inline float Character::speed()const{
+  return speed_;
+}
 
 #endif

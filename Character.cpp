@@ -36,11 +36,3 @@ void Character::Break(){
     std::cout<< "Your car is stopped!"<< std::endl;
   }
 }
-
-/**
- * Inlined getter of speed
- * @param none
- */
-inline float Character::speed(){
-  return speed_;
-}
