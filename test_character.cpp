@@ -118,7 +118,7 @@ int test_Mario_and_Yoshi(){
   Yoshi y;
   if (m.WhatAmI()=="Mario"){
     std::cout<<m.WhatAmI()<<std::endl;
-    if (y.WhatAmI()=="Yoshi"){
+    if (y.WhatAmI()=="Bald Yoshi"){
       std::cout<<y.WhatAmI()<<std::endl;
       return 0;
     }
@@ -152,37 +152,89 @@ int test_Mario_and_Yoshi_accelerate(){
  * Race between two mario's and a yoshi; the first that goes up to speed 10 win.
  *
  * @param none
+ * @return 0 if the test is a success; 1 if not
  */
-void Let_the_Race_begin(){
-  std::vector<Character*> racer;
-  racer.push_back(new Mario);
-  racer.push_back(new Yoshi);
-  racer.push_back(new Mario);
+int Let_the_Race_begin(){
+  std::vector<Character*> racers;
+  racers.push_back(new Mario);
+  racers.push_back(new Yoshi(5));
+  racers.push_back(new Mario);
   int course=1;
   Character* winner;
   while(course==1){
-    for(Character* n : racer){
+    for(Character* n : racers){
       n->Accelerate();
       if(n->speed()==10){
         course=0;
       }
     }
   }
-    for(Character* n : racer){
+    for(Character* n : racers){
       std::cout<<n->WhatAmI()<<" :"<<n->speed()<<std::endl;
       if(n->speed()==10){
         winner=n;
       }
       }
     std::cout<<"The winner is "<<winner->WhatAmI()<<std::endl;
-    for(Character* n : racer){
+
+    if(winner->WhatAmI()=="5 crested Yoshi"){
+      for(Character* n : racers){
+        delete n;
+        }
+      return 0;
+    }
+    for(Character* n : racers){
       delete n;
       }
+    return 1;
 }
 
-void Yoshi_constructor_and_destructor(){
+/**
+ * Test the default constructor and the constructor for Yoshi
+ *
+ * @param none
+ * @return 0 if the test is a success; 1 if not
+ */
+int Yoshi_constructor_and_destructor(){
   Yoshi y;
   Yoshi y2(5);
-  std::cout<<y.WhatAmI()<<std::endl;
-  std::cout<<y2.WhatAmI()<<std::endl;
+  if (y.WhatAmI()=="Bald Yoshi"){
+    std::cout<<y.WhatAmI()<<std::endl;
+    if (y2.WhatAmI()=="5 crested Yoshi"){
+    std::cout<<y2.WhatAmI()<<std::endl;
+    return 0;
+  }
+  }
+return 1;
+}
+
+int all_test(){
+  int i= 0;
+
+  std::cout<< "Test constructeur: "<<std::endl;
+  i+=test_ctor();
+  std::cout<< "\nTest accelerer: "<<std::endl;
+  i+=test_accelerate();
+  std::cout<< "\nTest accelerer plus que la vitesse: "<<std::endl;
+  i+=test_accelerate_more_than_max_speed();
+  std::cout<< "\nTest breack lower than 0: "<<std::endl;
+  i+=test_break_lower_than_zero();
+  std::cout<< "\nTest break : "<<std::endl;
+
+  i+=test_break();
+  std::cout<< "\nTest mario et yoshi: "<<std::endl;
+  i+=test_Mario_and_Yoshi();
+  std::cout<< "\nTest mario et yoshi accelerate: "<<std::endl;
+  i+=test_Mario_and_Yoshi_accelerate();
+  test_destructor();
+  std::cout<< "\nTest yoshi constructor: "<<std::endl;
+  i+=Yoshi_constructor_and_destructor();
+  std::cout<< "\nThe BIG RACE: "<<std::endl;
+  i+= Let_the_Race_begin();
+
+  if (i==0){
+    std::cout<<"Tout les tests sont réussis"<<std::endl;
+    return 0;
+  }
+  return 1;
 }

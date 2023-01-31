@@ -9,6 +9,7 @@ int test_break(void);
 void test_destructor(void);
 int test_Mario_and_Yoshi(void);
 int test_Mario_and_Yoshi_accelerate(void);
-void Let_the_Race_begin(void);
-void Yoshi_constructor_and_destructor(void);
+int Let_the_Race_begin(void);
+int Yoshi_constructor_and_destructor(void);
+int all_test(void);
 #endif
