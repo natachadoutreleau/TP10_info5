@@ -5,7 +5,7 @@
 
 
 /**
- * Constructer
+ * Constructs a Yoshi object, initializing parameter crest_ to 0 and all the other paramter like Character
  * @param none
  */
 Yoshi::Yoshi(): Character()
@@ -14,14 +14,18 @@ Yoshi::Yoshi(): Character()
 }
 
 /**
- * Constructer by default, if the number of crest is not given the given number of crest is 0
- * @param none
+ * Constructs a Yoshi object, initializing parameter crest_ to crest and all the other paramter like Character
+ * @param int crest: number of crest
  */
 Yoshi::Yoshi(int crest): Character()
 {
   crest_=new int(crest);
 }
 
+/**
+ * Destructor of Yoshi; override the Character destructor
+ * @param none
+ */
 Yoshi::~Yoshi(){
   delete crest_;
 }

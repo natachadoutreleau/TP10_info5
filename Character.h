@@ -22,6 +22,7 @@ public:
 /**
  * Inlined getter of speed
  * @param none
+ * @return float speed
  */
 inline float Character::speed()const{
   return speed_;

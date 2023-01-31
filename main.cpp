@@ -6,5 +6,7 @@
 
 int main(){
   int i= all_test();
+  ///////// RACE //////////
+  i+=Let_the_Race_begin();
 return 0;
 }

@@ -161,20 +161,18 @@ int Let_the_Race_begin(){
   racers.push_back(new Mario);
   int course=1;
   Character* winner;
-  while(course==1){
+  while(course>0){
+    course++;
+    std::cout<<"****** Tours "<<course-1<<" :  ******" << std::endl;
     for(Character* n : racers){
       n->Accelerate();
+      std::cout<<n->WhatAmI()<<" :"<<n->speed()<<std::endl;
       if(n->speed()==10){
+        winner=n;
         course=0;
       }
     }
   }
-    for(Character* n : racers){
-      std::cout<<n->WhatAmI()<<" :"<<n->speed()<<std::endl;
-      if(n->speed()==10){
-        winner=n;
-      }
-      }
     std::cout<<"The winner is "<<winner->WhatAmI()<<std::endl;
 
     if(winner->WhatAmI()=="5 crested Yoshi"){
@@ -208,6 +206,12 @@ int Yoshi_constructor_and_destructor(){
 return 1;
 }
 
+/**
+ * Test all the tests function
+ *
+ * @param none
+ * @return 0 if the tests are a success; 1 if not
+ */
 int all_test(){
   int i= 0;
 
@@ -233,7 +237,7 @@ int all_test(){
   i+= Let_the_Race_begin();
 
   if (i==0){
-    std::cout<<"Tout les tests sont réussis"<<std::endl;
+    std::cout<<\n "*********** Tout les tests sont réussis **************\n "<<std::endl;
     return 0;
   }
   return 1;
