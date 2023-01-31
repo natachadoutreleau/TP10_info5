@@ -8,6 +8,7 @@ class Yoshi : public Character
 {
   public :
   virtual std::string WhatAmI() const;
+  void Accelerate();
 
 };
 

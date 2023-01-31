@@ -1,5 +1,5 @@
 
-objects = Character.o test_character.o main.o bin
+objects = Character.o test_character.o main.o Mario.o Yoshi.o bin
 
 bin : main.o test_character.o Character.o Mario.o Yoshi.o
 	g++ -std=c++11 main.o test_character.o Character.o Mario.o Yoshi.o -o bin

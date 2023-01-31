@@ -9,7 +9,7 @@ public:
     Character();
     ~Character()=default;
 
-    void Accelerate();
+    virtual void Accelerate();
     void Break();
     float speed() const;
     virtual std::string WhatAmI() const = 0;

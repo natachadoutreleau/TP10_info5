@@ -1,4 +1,5 @@
 #include<iostream>
+#include <vector>
 #include "test_character.h"
 #include "Character.h"
 #include "Mario.h"
@@ -99,9 +100,80 @@ int test_break(){
  * if the delete line is commented, the memory in use at exit will be 8 byte;
  * if delete is used (destructor) than the memory in use at exit is 0
  *
- *@param none
+ * @param none
  */
 void test_destructor(){
   Mario *c = new Mario;
   delete c;
+}
+
+/**
+ * Test if Mario an Yoshi override the WhatAmI function
+ *
+ * @param none
+ * @return 0 if the test is a success; 1 if not
+ */
+int test_Mario_and_Yoshi(){
+  Mario m;
+  Yoshi y;
+  if (m.WhatAmI()=="Mario"){
+    std::cout<<m.WhatAmI()<<std::endl;
+    if (y.WhatAmI()=="Yoshi"){
+      std::cout<<y.WhatAmI()<<std::endl;
+      return 0;
+    }
+  }
+  return 1;
+}
+
+/**
+ * Test if Yoshi Accelerate faster than mario
+ *
+ * @param none
+ * @return 0 if the test is a success; 1 if not
+ */
+int test_Mario_and_Yoshi_accelerate(){
+  Mario m;
+  Yoshi y;
+  if(m.speed()==y.speed()){
+    m.Accelerate();
+    y.Accelerate();
+    if(m.speed()< y.speed()){
+      std::cout<<m.WhatAmI()<<" : "<<m.speed()<<std::endl;
+      std::cout<<y.WhatAmI()<<" : "<<y.speed()<<std::endl;
+      return 0;
+    }
+  }
+  return 1;
+}
+
+
+/**
+ * Test if Yoshi Accelerate faster than mario
+ *
+ * @param none
+ * @return 0 if the test is a success; 1 if not
+ */
+void Let_the_Race_begin(){
+  std::vector<Character*> racer;
+  racer.push_back(new Mario);
+  racer.push_back(new Yoshi);
+  racer.push_back(new Mario);
+  int course=1;
+  Character* winner;
+  while(course==1){
+    for(Character* n : racer){
+      n->Accelerate();
+      if(n->speed()==10){
+        course=0;
+      }
+    }
+  }
+    for(Character* n : racer){
+      std::cout<<n->WhatAmI()<<" :"<<n->speed()<<std::endl;
+      if(n->speed()==10){
+        winner=n;
+      }
+      }
+    std::cout<<"The winner is "<<winner->WhatAmI()<<std::endl;
 }
