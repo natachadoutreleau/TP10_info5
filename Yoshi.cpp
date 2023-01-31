@@ -22,6 +22,10 @@ Yoshi::Yoshi(int crest): Character()
   crest_=new int(crest);
 }
 
+Yoshi::~Yoshi(){
+  delete crest_;
+}
+
 
 /**
  * Override the Character::WhatamI function

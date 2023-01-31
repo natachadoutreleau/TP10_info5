@@ -26,5 +26,7 @@ int main(){
   std::cout<< "\nThe BIG RACE: "<<std::endl;
   Let_the_Race_begin();
 
+  Yoshi_constructor_and_destructor();
+
 return 0;
 }

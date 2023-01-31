@@ -9,6 +9,7 @@ class Yoshi : public Character
   public :
   Yoshi();
   Yoshi(int crest);
+  ~Yoshi();
   virtual std::string WhatAmI() const;
   void Accelerate();
 

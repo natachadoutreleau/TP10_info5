@@ -179,3 +179,10 @@ void Let_the_Race_begin(){
       delete n;
       }
 }
+
+void Yoshi_constructor_and_destructor(){
+  Yoshi y;
+  Yoshi y2(5);
+  std::cout<<y.WhatAmI()<<std::endl;
+  std::cout<<y2.WhatAmI()<<std::endl;
+}

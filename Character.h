@@ -7,7 +7,7 @@ class Character{
 public:
 
     Character();
-    ~Character()=default;
+    virtual ~Character()=default;
 
     virtual void Accelerate();
     void Break();
