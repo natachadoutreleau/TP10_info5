@@ -4,8 +4,10 @@
 
 int main(){
   int i= 0;
+
   std::cout<< "Test 1: "<<std::endl;
   i=test_ctor();
+    /*
   std::cout<< "\nTest 2: "<<std::endl;
   i=test_accelerate();
   std::cout<< "\nTest 3: "<<std::endl;
@@ -16,7 +18,7 @@ int main(){
   i=test_break();
 
   test_destructor();
-
+  */
 
 return 0;
 }

@@ -1,6 +1,8 @@
 #ifndef CHARACTER_H_
 #define CHARACTER_H_
 
+#include <string>
+
 class Character{
 public:
 
@@ -10,6 +12,7 @@ public:
     void Accelerate();
     void Break();
     float speed() const;
+    virtual std::string WhatAmI() const = 0;
 
     protected :
         float speed_;

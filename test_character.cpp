@@ -97,7 +97,7 @@ int test_break(){
  * if the delete line is commented, the memory in use at exit will be 8 byte;
  * if delete is used (destructor) than the memory in use at exit is 0
  *
- * @param none
+ *@param none
  */
 void test_destructor(){
   Character *c = new Character;
